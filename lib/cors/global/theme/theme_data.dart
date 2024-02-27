@@ -31,6 +31,22 @@ class Styles {
                 ? AppColorsDark.primaryColor
                 : AppColorsLight.primaryColor,
           ),
+      primaryTextTheme: Theme.of(context).primaryTextTheme.apply(
+            bodyColor: isDarkTheme
+                ? AppColorsDark.primaryColor
+                : AppColorsLight.primaryColor,
+          ),
+      bottomAppBarTheme: Theme.of(context).bottomAppBarTheme.copyWith(
+            color: isDarkTheme
+                ? AppColorsDark.appBottomNavigationBar
+                : AppColorsLight.appBottomNavigationBar,
+          ),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: AppColorsLight.buttonsColor,
+          foregroundColor: AppColorsDark.primaryColor,
+        ),
+      ),
     );
   }
 }
