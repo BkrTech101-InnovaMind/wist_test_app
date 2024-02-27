@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:wist_test_task/components/screens_navigator.dart';
 import 'package:wist_test_task/cors/global/theme/theme_data.dart';
 import 'package:wist_test_task/cors/provider/theme_provider.dart';
-import 'package:wist_test_task/screens/home_screen.dart';
+import 'package:wist_test_task/screens/on_boarding_screen.dart';
 import 'package:wist_test_task/screens/splash_screen.dart';
 
 ThemeProvider themeChangeProvider = ThemeProvider();
@@ -47,7 +48,8 @@ class _BankPickState extends State<BankPick> {
         initialRoute: "/",
         routes: {
           "/": (context) => const SplashScreen(),
-          "home": (context) => const HomeScreen(),
+          "home": (context) => const ScreensNavigator(),
+          "boarding": (context) => const OnBoardingScreen(),
         },
       );
     });
