@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:wist_test_task/cors/services/state_prefs.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -15,9 +16,23 @@ class _SplashScreenState extends State<SplashScreen>
     super.initState();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
 
-    Future.delayed(const Duration(seconds: 3), () {
-      Navigator.pushReplacementNamed(context, "boarding");
+    Future.delayed(const Duration(seconds: 3), () async {
+      StatePrefs firstUsePrefs = StatePrefs("FIRST_USE");
+      bool isFirstUse = await firstUsePrefs.getTheState();
+      if (!isFirstUse) {
+        _navigateToHome();
+      } else {
+        _navigateToBoarding();
+      }
     });
+  }
+
+  void _navigateToHome() {
+    Navigator.pushReplacementNamed(context, "home");
+  }
+
+  void _navigateToBoarding() {
+    Navigator.pushReplacementNamed(context, "boarding");
   }
 
   @override
