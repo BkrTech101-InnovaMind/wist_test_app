@@ -106,12 +106,12 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               IconButton(
                 onPressed: () {},
-                icon: Icon(Icons.arrow_downward),
+                icon: const Icon(Icons.arrow_downward),
                 iconSize: ResponsiveLayout.heightMultiplier(context, 3.5),
                 padding: EdgeInsets.all(
                     ResponsiveLayout.widthMultiplier(context, 3)),
               ),
-              CustomText(
+              const CustomText(
                 text: "Receive",
                 fontSize: 2,
                 fontWeight: FontWeight.bold,
@@ -122,12 +122,12 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               IconButton(
                 onPressed: () {},
-                icon: Icon(Icons.monetization_on_outlined),
+                icon: const Icon(Icons.monetization_on_outlined),
                 iconSize: ResponsiveLayout.heightMultiplier(context, 3.5),
                 padding: EdgeInsets.all(
                     ResponsiveLayout.widthMultiplier(context, 3)),
               ),
-              CustomText(
+              const CustomText(
                 text: "Loan",
                 fontSize: 2,
                 fontWeight: FontWeight.bold,
@@ -138,12 +138,12 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               IconButton(
                 onPressed: () {},
-                icon: Icon(Icons.cloud_upload_outlined),
+                icon: const Icon(Icons.cloud_upload_outlined),
                 iconSize: ResponsiveLayout.heightMultiplier(context, 3.5),
                 padding: EdgeInsets.all(
                     ResponsiveLayout.widthMultiplier(context, 3)),
               ),
-              CustomText(
+              const CustomText(
                 text: "Topup",
                 fontSize: 2,
                 fontWeight: FontWeight.bold,
@@ -191,7 +191,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        CustomText(
+        const CustomText(
           text: "Transactions",
           fontWeight: FontWeight.bold,
           fontSize: 3,

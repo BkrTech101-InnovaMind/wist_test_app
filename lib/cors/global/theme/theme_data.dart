@@ -90,6 +90,14 @@ class Styles {
                 ? AppColorsDark.primaryColor
                 : AppColorsLight.buttonsColor,
           ),
+      textButtonTheme: TextButtonThemeData(
+        style: TextButton.styleFrom(
+          foregroundColor: isDarkTheme
+              ? AppColorsDark.primaryColor
+              : AppColorsLight.primaryColor,
+          alignment: Alignment.centerLeft,
+        ),
+      ),
     );
   }
 }
