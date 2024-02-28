@@ -22,21 +22,17 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Container(
-          margin: EdgeInsets.symmetric(
-              horizontal: ResponsiveLayout.widthMultiplier(context, 1.5)),
-          child: Column(
-            children: [
-              Column(
-                children: [
-                  _headSection(),
-                  CreaditCard(),
-                  _navigateSection(),
-                ],
-              ),
-              Expanded(child: _transactionSection()),
-            ],
-          ),
+        child: Column(
+          children: [
+            Column(
+              children: [
+                _headSection(),
+                const CreaditCard(),
+                _navigateSection(),
+              ],
+            ),
+            Expanded(child: _transactionSection()),
+          ],
         ),
       ),
     );
@@ -94,12 +90,12 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               IconButton(
                 onPressed: () {},
-                icon: Icon(Icons.arrow_upward),
+                icon: const Icon(Icons.arrow_upward),
                 iconSize: ResponsiveLayout.heightMultiplier(context, 3.5),
                 padding: EdgeInsets.all(
                     ResponsiveLayout.widthMultiplier(context, 3)),
               ),
-              CustomText(
+              const CustomText(
                 text: "Sent",
                 fontSize: 2,
                 fontWeight: FontWeight.bold,
@@ -164,27 +160,32 @@ class _HomeScreenState extends State<HomeScreen> {
       {
         "title": "AppleStore",
         "subtitle": "Entertainment",
-        "icon": Icons.apple,
+        "leading": Icons.apple,
+        "trailing": "- \$5,99"
       },
       {
         "title": "AppleStore",
         "subtitle": "Entertainment",
-        "icon": Icons.apple,
+        "leading": Icons.apple,
+        "trailing": "- \$5,99"
       },
       {
         "title": "AppleStore",
         "subtitle": "Entertainment",
-        "icon": Icons.apple,
+        "leading": Icons.apple,
+        "trailing": "- \$5,99"
       },
       {
         "title": "AppleStore",
         "subtitle": "Entertainment",
-        "icon": Icons.apple,
+        "leading": Icons.apple,
+        "trailing": "- \$5,99"
       },
       {
         "title": "AppleStore",
         "subtitle": "Entertainment",
-        "icon": Icons.apple,
+        "leading": Icons.apple,
+        "trailing": "- \$5,99"
       },
     ];
     return Column(
@@ -205,9 +206,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 contentPadding: EdgeInsets.zero,
                 leading: IconButton(
                   onPressed: () {},
-                  icon: Icon(
-                    transactionsDetails[index]["icon"],
-                  ),
+                  icon: Icon(transactionsDetails[index]["leading"]),
                 ),
                 title: CustomText(
                   text: transactionsDetails[index]["title"],
@@ -218,6 +217,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   text: transactionsDetails[index]["subtitle"],
                   color: AppColorsDark.secondaryColor,
                   fontSize: 1.7,
+                ),
+                trailing: CustomText(
+                  text: transactionsDetails[index]["trailing"],
+                  fontWeight: FontWeight.bold,
                 ),
               );
             },
