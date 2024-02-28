@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import 'package:wist_test_task/components/custom_text.dart';
@@ -46,15 +47,18 @@ class _HomeScreenState extends State<HomeScreen> {
     final themeState = Provider.of<ThemeProvider>(context);
     return Row(
       children: [
-        CachedNetworkImage(
-          imageUrl: "https://avatars.githubusercontent.com/u/93738112?v=4",
-          imageBuilder: (context, imageProvider) => CircleAvatar(
-            backgroundImage: imageProvider,
-            radius: ResponsiveLayout.heightMultiplier(context, 3),
-          ),
-          placeholder: (context, url) => const Center(
-            child:
-                CircularProgressIndicator(color: AppColorsLight.primaryColor),
+        GestureDetector(
+          onTap: () => Navigator.pushNamed(context, "profile"),
+          child: CachedNetworkImage(
+            imageUrl: "https://avatars.githubusercontent.com/u/93738112?v=4",
+            imageBuilder: (context, imageProvider) => CircleAvatar(
+              backgroundImage: imageProvider,
+              radius: ResponsiveLayout.heightMultiplier(context, 3),
+            ),
+            placeholder: (context, url) => const Center(
+              child:
+                  CircularProgressIndicator(color: AppColorsLight.primaryColor),
+            ),
           ),
         ),
         const Expanded(

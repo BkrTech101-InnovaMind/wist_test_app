@@ -4,6 +4,7 @@ import 'package:wist_test_task/components/screens_navigator.dart';
 import 'package:wist_test_task/cors/global/theme/theme_data.dart';
 import 'package:wist_test_task/cors/provider/theme_provider.dart';
 import 'package:wist_test_task/screens/on_boarding_screen.dart';
+import 'package:wist_test_task/screens/profile_screen.dart';
 import 'package:wist_test_task/screens/sign_in_screen.dart';
 import 'package:wist_test_task/screens/sign_up_screen.dart';
 import 'package:wist_test_task/screens/splash_screen.dart';
@@ -54,6 +55,7 @@ class _BankPickState extends State<BankPick> {
           "boarding": (context) => const OnBoardingScreen(),
           "sign_in": (context) => const SignInScreen(),
           "sign_up": (context) => const SignUpScreen(),
+          "profile": (context) => const ProfileScreen(),
         },
       );
     });

@@ -7,7 +7,7 @@ class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: SafeArea(child: Center(child: CustomText(text: "Profile Screen"))),
+      body: SafeArea(child: Center(child: CustomText(text: "Settings Screen"))),
     );
   }
 }
