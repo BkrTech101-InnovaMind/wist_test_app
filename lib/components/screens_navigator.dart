@@ -33,7 +33,9 @@ class _ScreensNavigatorState extends State<ScreensNavigator> {
       const HomeScreen(),
       MyCardsScreen(onBackButtonPressed: navigateBack),
       const StatisticsScreen(),
-      const SettingsScreen(),
+      SettingsScreen(
+        onBackButtonPressed: navigateBack,
+      ),
     });
   }
 
