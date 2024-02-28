@@ -7,12 +7,15 @@ class CustomText extends StatelessWidget {
   final FontWeight? fontWeight;
   final double? fontSize;
   final Color? color;
-  const CustomText(
-      {super.key,
-      required this.text,
-      this.fontWeight,
-      this.color,
-      this.fontSize});
+  final TextAlign? alignment;
+  const CustomText({
+    super.key,
+    required this.text,
+    this.fontWeight,
+    this.color,
+    this.fontSize,
+    this.alignment,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +24,9 @@ class CustomText extends StatelessWidget {
       style: TextStyle(
         fontSize: ResponsiveLayout.heightMultiplier(context, fontSize ?? 1.7),
         fontWeight: fontWeight ?? FontWeight.normal,
-        color: color ?? AppColorsDark.primaryColor,
+        color: color,
       ),
+      textAlign: alignment,
     );
   }
 }
