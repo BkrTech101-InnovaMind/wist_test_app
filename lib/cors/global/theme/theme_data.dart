@@ -71,6 +71,25 @@ class Styles {
                 ? AppColorsDark.primaryColor
                 : AppColorsLight.primaryColor,
           ),
+      cardTheme: Theme.of(context).cardTheme.copyWith(
+            color: isDarkTheme
+                ? AppColorsDark.cardBackgroundColor
+                : AppColorsLight.backGroundColor,
+          ),
+      sliderTheme: Theme.of(context).sliderTheme.copyWith(
+            activeTrackColor: isDarkTheme
+                ? AppColorsDark.primaryColor
+                : AppColorsLight.buttonsColor,
+            activeTickMarkColor: isDarkTheme
+                ? AppColorsDark.primaryColor
+                : AppColorsLight.buttonsColor,
+            thumbColor: isDarkTheme
+                ? AppColorsLight.buttonsColor
+                : AppColorsDark.primaryColor,
+            overlayColor: isDarkTheme
+                ? AppColorsDark.primaryColor
+                : AppColorsLight.buttonsColor,
+          ),
     );
   }
 }
