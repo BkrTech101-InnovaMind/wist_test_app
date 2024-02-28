@@ -35,7 +35,7 @@ class _ScreensNavigatorState extends State<ScreensNavigator> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageView(
-        physics: const BouncingScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         controller: _pageController,
         onPageChanged: (value) => setState(() => _selectedIndex = value),
         // physics: const NeverScrollableScrollPhysics(),

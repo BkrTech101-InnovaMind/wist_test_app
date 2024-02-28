@@ -157,74 +157,79 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget _navigateSection() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Column(
-          children: [
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.arrow_upward),
-              iconSize: ResponsiveLayout.heightMultiplier(context, 3.5),
-              padding:
-                  EdgeInsets.all(ResponsiveLayout.widthMultiplier(context, 3)),
-            ),
-            CustomText(
-              text: "Sent",
-              fontSize: 2,
-              fontWeight: FontWeight.bold,
-            )
-          ],
-        ),
-        Column(
-          children: [
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.arrow_downward),
-              iconSize: ResponsiveLayout.heightMultiplier(context, 3.5),
-              padding:
-                  EdgeInsets.all(ResponsiveLayout.widthMultiplier(context, 3)),
-            ),
-            CustomText(
-              text: "Receive",
-              fontSize: 2,
-              fontWeight: FontWeight.bold,
-            )
-          ],
-        ),
-        Column(
-          children: [
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.monetization_on_outlined),
-              iconSize: ResponsiveLayout.heightMultiplier(context, 3.5),
-              padding:
-                  EdgeInsets.all(ResponsiveLayout.widthMultiplier(context, 3)),
-            ),
-            CustomText(
-              text: "Loan",
-              fontSize: 2,
-              fontWeight: FontWeight.bold,
-            )
-          ],
-        ),
-        Column(
-          children: [
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.cloud_upload_outlined),
-              iconSize: ResponsiveLayout.heightMultiplier(context, 3.5),
-              padding:
-                  EdgeInsets.all(ResponsiveLayout.widthMultiplier(context, 3)),
-            ),
-            CustomText(
-              text: "Topup",
-              fontSize: 2,
-              fontWeight: FontWeight.bold,
-            )
-          ],
-        ),
-      ],
+    return Container(
+      margin: EdgeInsets.symmetric(
+        vertical: ResponsiveLayout.heightMultiplier(context, 2),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(
+            children: [
+              IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.arrow_upward),
+                iconSize: ResponsiveLayout.heightMultiplier(context, 3.5),
+                padding: EdgeInsets.all(
+                    ResponsiveLayout.widthMultiplier(context, 3)),
+              ),
+              CustomText(
+                text: "Sent",
+                fontSize: 2,
+                fontWeight: FontWeight.bold,
+              )
+            ],
+          ),
+          Column(
+            children: [
+              IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.arrow_downward),
+                iconSize: ResponsiveLayout.heightMultiplier(context, 3.5),
+                padding: EdgeInsets.all(
+                    ResponsiveLayout.widthMultiplier(context, 3)),
+              ),
+              CustomText(
+                text: "Receive",
+                fontSize: 2,
+                fontWeight: FontWeight.bold,
+              )
+            ],
+          ),
+          Column(
+            children: [
+              IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.monetization_on_outlined),
+                iconSize: ResponsiveLayout.heightMultiplier(context, 3.5),
+                padding: EdgeInsets.all(
+                    ResponsiveLayout.widthMultiplier(context, 3)),
+              ),
+              CustomText(
+                text: "Loan",
+                fontSize: 2,
+                fontWeight: FontWeight.bold,
+              )
+            ],
+          ),
+          Column(
+            children: [
+              IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.cloud_upload_outlined),
+                iconSize: ResponsiveLayout.heightMultiplier(context, 3.5),
+                padding: EdgeInsets.all(
+                    ResponsiveLayout.widthMultiplier(context, 3)),
+              ),
+              CustomText(
+                text: "Topup",
+                fontSize: 2,
+                fontWeight: FontWeight.bold,
+              )
+            ],
+          ),
+        ],
+      ),
     );
   }
 
@@ -259,7 +264,11 @@ class _HomeScreenState extends State<HomeScreen> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        CustomText(text: "Transactions"),
+        CustomText(
+          text: "Transactions",
+          fontWeight: FontWeight.bold,
+          fontSize: 3,
+        ),
         Expanded(
           child: ListView.builder(
             shrinkWrap: true,
@@ -277,12 +286,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 title: CustomText(
                   text: transactionsDetails[index]["title"],
                   fontWeight: FontWeight.bold,
-                  fontSize: 2,
+                  fontSize: 2.2,
                 ),
                 subtitle: CustomText(
                   text: transactionsDetails[index]["subtitle"],
                   color: AppColorsDark.secondaryColor,
-                  fontSize: 1.5,
+                  fontSize: 1.7,
                 ),
               );
             },
