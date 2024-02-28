@@ -47,6 +47,19 @@ class Styles {
           foregroundColor: AppColorsDark.primaryColor,
         ),
       ),
+      iconButtonTheme: IconButtonThemeData(
+        style: IconButton.styleFrom(
+          backgroundColor: isDarkTheme
+              ? AppColorsDark.backButtonColor
+              : AppColorsLight.appBottomNavigationBar,
+          foregroundColor: isDarkTheme
+              ? AppColorsLight.appBottomNavigationBar
+              : AppColorsDark.appBottomNavigationBar,
+        ),
+      ),
+      inputDecorationTheme: Theme.of(context).inputDecorationTheme.copyWith(
+            contentPadding: const EdgeInsets.all(0),
+          ),
     );
   }
 }
