@@ -33,7 +33,7 @@ class CreaditCard extends StatelessWidget {
             const Center(
               child: CustomText(
                 text: "4562   1122   4595   7852",
-                fontSize: 3.7,
+                fontSize: 3.6,
                 color: AppColorsDark.primaryColor,
               ),
             ),
