@@ -3,8 +3,9 @@ import 'package:wist_test_task/components/custom_text.dart';
 import 'package:wist_test_task/layout/_responsive_layout.dart';
 
 class CustomButton extends StatefulWidget {
-  // final VoidCallback onPressed;
-  const CustomButton({super.key});
+  final VoidCallback onPressed;
+  final String text;
+  const CustomButton({super.key, required this.onPressed, required this.text});
 
   @override
   State<CustomButton> createState() => _CustomButtonState();
@@ -16,7 +17,7 @@ class _CustomButtonState extends State<CustomButton> {
     return SizedBox(
       width: ResponsiveLayout.widthMultiplier(context, double.infinity),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: widget.onPressed,
         style: ElevatedButton.styleFrom(
             fixedSize: Size(
               double.infinity,
@@ -30,9 +31,9 @@ class _CustomButtonState extends State<CustomButton> {
               borderRadius: BorderRadius.circular(10),
             )),
         child: CustomText(
-          text: "text",
+          text: widget.text,
           fontWeight: FontWeight.bold,
-          fontSize: 4,
+          fontSize: 3,
         ),
       ),
     );
