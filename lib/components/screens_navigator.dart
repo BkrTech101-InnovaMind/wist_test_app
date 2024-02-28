@@ -16,12 +16,26 @@ class ScreensNavigator extends StatefulWidget {
 class _ScreensNavigatorState extends State<ScreensNavigator> {
   int _selectedIndex = 0;
   final PageController _pageController = PageController();
-  final screens = [
-    const HomeScreen(),
-    const MyCardsScreen(),
-    const StatisticsScreen(),
-    const SettingsScreen(),
-  ];
+  final List<Widget> screens = [];
+
+  navigateBack() {
+    _pageController.animateToPage(
+      _selectedIndex - 1,
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.easeInOutCubic,
+    );
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    screens.addAll({
+      const HomeScreen(),
+      MyCardsScreen(onBackButtonPressed: navigateBack),
+      const StatisticsScreen(),
+      const SettingsScreen(),
+    });
+  }
 
   void iconPressed(int index) {
     _pageController.animateToPage(
@@ -34,12 +48,21 @@ class _ScreensNavigatorState extends State<ScreensNavigator> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: PageView(
-        physics: const NeverScrollableScrollPhysics(),
-        controller: _pageController,
-        onPageChanged: (value) => setState(() => _selectedIndex = value),
-        // physics: const NeverScrollableScrollPhysics(),
-        children: screens,
+      body: SafeArea(
+        child: Container(
+          margin: EdgeInsets.only(
+            top: ResponsiveLayout.heightMultiplier(context, 2),
+            left: ResponsiveLayout.widthMultiplier(context, 2),
+            right: ResponsiveLayout.widthMultiplier(context, 2),
+          ),
+          child: PageView(
+            physics: const NeverScrollableScrollPhysics(),
+            controller: _pageController,
+            onPageChanged: (value) => setState(() => _selectedIndex = value),
+            // physics: const NeverScrollableScrollPhysics(),
+            children: screens,
+          ),
+        ),
       ),
       bottomNavigationBar: BottomAppBar(
         elevation: 0,
