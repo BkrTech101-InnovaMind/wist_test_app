@@ -19,10 +19,10 @@ class _SplashScreenState extends State<SplashScreen>
     Future.delayed(const Duration(seconds: 3), () async {
       StatePrefs firstUsePrefs = StatePrefs("FIRST_USE");
       bool isFirstUse = await firstUsePrefs.getTheState();
-      if (!isFirstUse) {
-        _navigateToHome();
-      } else {
+      if (isFirstUse == false) {
         _navigateToBoarding();
+      } else {
+        _navigateToHome();
       }
     });
   }
@@ -31,8 +31,9 @@ class _SplashScreenState extends State<SplashScreen>
     Navigator.pushReplacementNamed(context, "home");
   }
 
-  void _navigateToBoarding() {
+  void _navigateToBoarding() async {
     Navigator.pushReplacementNamed(context, "boarding");
+    await StatePrefs("FIRST_USE").setTheState(true);
   }
 
   @override
