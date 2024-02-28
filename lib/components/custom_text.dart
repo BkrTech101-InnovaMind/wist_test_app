@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:wist_test_task/cors/global/app_colors/app_color_dark.dart';
 import 'package:wist_test_task/layout/_responsive_layout.dart';
 
 class CustomText extends StatelessWidget {
