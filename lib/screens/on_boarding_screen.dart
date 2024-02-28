@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:wist_test_task/components/custom_button.dart';
 import 'package:wist_test_task/components/on_boarding.dart';
 import 'package:wist_test_task/components/page_indecator.dart';
+import 'package:wist_test_task/cors/provider/theme_provider.dart';
 import 'package:wist_test_task/cors/services/state_prefs.dart';
 import 'package:wist_test_task/layout/_responsive_layout.dart';
 
@@ -73,6 +75,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final themeState = Provider.of<ThemeProvider>(context);
     return Scaffold(
       body: Container(
         margin: EdgeInsets.symmetric(
@@ -105,6 +108,15 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   ),
                 ),
               ),
+              Positioned(
+                right: 0,
+                child: IconButton(
+                  onPressed: () =>
+                      themeState.setDarkTheme = !themeState.getTheme,
+                  icon: Icon(
+                      themeState.getTheme ? Icons.dark_mode : Icons.light_mode),
+                ),
+              )
             ],
           ),
         ),
