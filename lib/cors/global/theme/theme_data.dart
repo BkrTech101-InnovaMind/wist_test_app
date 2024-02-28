@@ -60,6 +60,17 @@ class Styles {
       inputDecorationTheme: Theme.of(context).inputDecorationTheme.copyWith(
             contentPadding: const EdgeInsets.all(0),
           ),
+      listTileTheme: Theme.of(context).listTileTheme.copyWith(
+            tileColor: isDarkTheme
+                ? AppColorsDark.backGroundColor
+                : AppColorsLight.backGroundColor,
+            textColor: isDarkTheme
+                ? AppColorsDark.primaryColor
+                : AppColorsLight.primaryColor,
+            iconColor: isDarkTheme
+                ? AppColorsDark.primaryColor
+                : AppColorsLight.primaryColor,
+          ),
     );
   }
 }
