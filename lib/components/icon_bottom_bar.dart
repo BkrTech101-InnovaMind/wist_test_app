@@ -24,6 +24,9 @@ class IconBottomBar extends StatelessWidget {
       children: [
         IconButton(
           padding: const EdgeInsets.all(0),
+          style: const ButtonStyle(
+            backgroundColor: MaterialStatePropertyAll(Colors.transparent),
+          ),
           onPressed: onPressed,
           icon: SvgPicture.asset(
             "assets/icons/$icon.svg",
@@ -41,7 +44,7 @@ class IconBottomBar extends StatelessWidget {
         ),
         CustomText(
           text: text,
-          fontSize: 0.2,
+          fontSize: 1.5,
           color: selected
               ? AppColorsLight.buttonsColor
               : AppColorsLight.secondaryColor,
