@@ -8,4 +8,5 @@ class AppColorsDark {
   static const alarmColor = Color(0xFFEB0A24);
   static const appBottomNavigationBar = Color(0xFF27273A);
   static const backButtonColor = Color(0xFF1E1E2D);
+  static const cardBackgroundColor = Color(0xFF25253D);
 }
