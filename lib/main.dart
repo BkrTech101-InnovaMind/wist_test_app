@@ -4,6 +4,8 @@ import 'package:wist_test_task/components/screens_navigator.dart';
 import 'package:wist_test_task/cors/global/theme/theme_data.dart';
 import 'package:wist_test_task/cors/provider/theme_provider.dart';
 import 'package:wist_test_task/screens/on_boarding_screen.dart';
+import 'package:wist_test_task/screens/sign_in_screen.dart';
+import 'package:wist_test_task/screens/sign_up_screen.dart';
 import 'package:wist_test_task/screens/splash_screen.dart';
 
 ThemeProvider themeChangeProvider = ThemeProvider();
@@ -31,7 +33,7 @@ class BankPick extends StatefulWidget {
 class _BankPickState extends State<BankPick> {
   void getCurrentAppTheme() async {
     themeChangeProvider.setDarkTheme =
-        await themeChangeProvider.themePrefs.getTheme();
+        await themeChangeProvider.themePrefs.getTheState();
   }
 
   @override
@@ -50,6 +52,8 @@ class _BankPickState extends State<BankPick> {
           "/": (context) => const SplashScreen(),
           "home": (context) => const ScreensNavigator(),
           "boarding": (context) => const OnBoardingScreen(),
+          "sign_in": (context) => const SignInScreen(),
+          "sign_up": (context) => const SignUpScreen(),
         },
       );
     });
